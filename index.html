@@ -1,47 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SoundScape - Music Listing</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 <body>
-    <!-- 3D Animated Music Listing Section -->
-    <div class="music-container">
-        <div class="music-list">
-            <div class="music-tile" id="track1" onclick="playTrack('track1.mp3')">
-                <img src="album1.jpg" alt="Album Cover" class="album-cover">
-                <div class="track-info">
-                    <h3>Track Title 1</h3>
-                    <p>Artist Name</p>
-                </div>
-                <div class="play-button"></div>
-            </div>
-            <div class="music-tile" id="track2" onclick="playTrack('track2.mp3')">
-                <img src="album2.jpg" alt="Album Cover" class="album-cover">
-                <div class="track-info">
-                    <h3>Track Title 2</h3>
-                    <p>Artist Name</p>
-                </div>
-                <div class="play-button"></div>
-            </div>
-            <!-- Add more music tiles as needed -->
-        </div>
-    </div>
+    <!-- Background Animation Container -->
+    <div class="background"></div>
 
-    <!-- Music Player -->
-    <div class="music-player" id="player">
-        <div class="player-controls">
-            <button class="prev">Prev</button>
-            <button class="play-pause" onclick="togglePlay()">Play</button>
-            <button class="next">Next</button>
+    <!-- Main Navigation -->
+    <header class="main-header">
+        <div class="logo">
+            <h1>SoundScape</h1>
         </div>
-        <audio id="audioPlayer" controls>
-            <source id="audioSource" src="" type="audio/mp3">
-        </audio>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Browse</a></li>
+                <li><a href="#">Your Library</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Music Listing Section -->
+    <section class="music-listing">
+        <h2>Trending Tracks</h2>
+        <div class="music-grid">
+            <div class="music-card" onclick="playTrack('track1.mp3', 'Track Title 1', 'Artist 1')">
+                <img src="album1.jpg" alt="Track 1">
+                <h3>Track Title 1</h3>
+                <p>Artist 1</p>
+            </div>
+            <div class="music-card" onclick="playTrack('track2.mp3', 'Track Title 2', 'Artist 2')">
+                <img src="album2.jpg" alt="Track 2">
+                <h3>Track Title 2</h3>
+                <p>Artist 2</p>
+            </div>
+            <!-- Add more music cards as needed -->
+        </div>
+    </section>
+
+    <!-- Music Player Section -->
+    <div class="music-player" id="musicPlayer">
+        <div class="player-details">
+            <img id="currentTrackImage" src="" alt="Album Cover" class="track-image">
+            <div class="track-info">
+                <h3 id="currentTrackTitle">Track Title</h3>
+                <p id="currentArtist">Artist</p>
+            </div>
+        </div>
+        <div class="player-controls">
+            <button class="prev">&#9664;</button>
+            <button class="play-pause" onclick="togglePlay()">Play</button>
+            <button class="next">&#9654;</button>
+        </div>
+        <audio id="audioPlayer" controls></audio>
     </div>
 
     <script src="script.js"></script>
 </body>
-</html>
