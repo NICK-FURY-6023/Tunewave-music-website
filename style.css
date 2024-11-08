@@ -1,117 +1,137 @@
-/* Background animation styles */
+/* Reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Arial', sans-serif;
+    background-color: #121212;
     color: #fff;
+    overflow-x: hidden;
+}
+
+/* Header */
+header {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-    margin: 0;
-    position: relative;
-    background: linear-gradient(-45deg, #1db954, #ff7e5f, #7400b8, #0077b6);
-    background-size: 400% 400%;
-    animation: gradientBackground 10s ease infinite;
-}
-
-/* Background animation keyframes */
-@keyframes gradientBackground {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Make sure that the background stays behind everything else */
-.background {
-    position: absolute;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: #000;
+    position: fixed;
     top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
+    width: 100%;
+    z-index: 10;
 }
 
-/* Music listing and player sections remain the same as before */
-.music-listing {
+header .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1DB954;
+}
+
+header nav ul {
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 120px;
-    width: 80%;
-    max-width: 1200px;
+    gap: 20px;
 }
 
-.music-listing h2 {
-    font-size: 32px;
-    margin-bottom: 30px;
+header nav ul li a {
     color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-.music-grid {
+header nav ul li a:hover {
+    color: #1DB954;
+}
+
+/* Main content */
+main {
+    padding-top: 80px; /* To avoid header overlap */
+    padding: 20px;
+}
+
+.music-list {
+    text-align: center;
+}
+
+.music-list h2 {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.music-cards {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 30px;
-    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
 }
 
 .music-card {
-    position: relative;
-    width: 200px;
-    height: 300px;
-    background-color: #333;
+    background-color: #1c1c1c;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-    cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.music-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+    cursor: pointer;
+    position: relative;
 }
 
 .music-card img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: opacity 0.3s ease;
+    height: auto;
+    border-bottom: 3px solid #1DB954;
+    transition: transform 0.3s ease;
 }
 
-.music-card h3, .music-card p {
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    color: white;
+.music-card .info {
+    padding: 20px;
+    text-align: left;
 }
 
 .music-card h3 {
-    font-size: 20px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
 }
 
 .music-card p {
-    font-size: 14px;
+    font-size: 1.1rem;
+    color: #ccc;
 }
 
-/* Music player section remains the same */
-.music-player {
+/* Hover effects */
+.music-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+}
+
+.music-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
     position: fixed;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #121212;
-    width: 80%;
-    max-width: 600px;
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+footer .footer-info {
+    color: #ccc;
+}
+
+/* 3D Animation */
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.music-card:hover {
+    animation: float 1.5s ease-in-out infinite;
 }
