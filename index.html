@@ -1,55 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tunewave Music</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <!-- Background Animation Container -->
-    <div class="background"></div>
-
-    <!-- Main Navigation -->
-    <header class="main-header">
-        <div class="logo">
-            <h1>SoundScape</h1>
-        </div>
+    <header>
+        <div class="logo">Tunewave</div>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Browse</a></li>
-                <li><a href="#">Your Library</a></li>
+                <li><a href="#">Library</a></li>
+                <li><a href="#">Profile</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main Music Listing Section -->
-    <section class="music-listing">
-        <h2>Trending Tracks</h2>
-        <div class="music-grid">
-            <div class="music-card" onclick="playTrack('track1.mp3', 'Track Title 1', 'Artist 1')">
-                <img src="album1.jpg" alt="Track 1">
-                <h3>Track Title 1</h3>
-                <p>Artist 1</p>
+    <main>
+        <section class="music-list">
+            <h2>Trending Music</h2>
+            <div class="music-cards">
+                <!-- Example of a music card -->
+                <div class="music-card">
+                    <img src="album-cover1.jpg" alt="Album 1">
+                    <div class="info">
+                        <h3>Song Title 1</h3>
+                        <p>Artist Name</p>
+                    </div>
+                </div>
+                <div class="music-card">
+                    <img src="album-cover2.jpg" alt="Album 2">
+                    <div class="info">
+                        <h3>Song Title 2</h3>
+                        <p>Artist Name</p>
+                    </div>
+                </div>
+                <!-- Add more music cards here -->
             </div>
-            <div class="music-card" onclick="playTrack('track2.mp3', 'Track Title 2', 'Artist 2')">
-                <img src="album2.jpg" alt="Track 2">
-                <h3>Track Title 2</h3>
-                <p>Artist 2</p>
-            </div>
-            <!-- Add more music cards as needed -->
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Music Player Section -->
-    <div class="music-player" id="musicPlayer">
-        <div class="player-details">
-            <img id="currentTrackImage" src="" alt="Album Cover" class="track-image">
-            <div class="track-info">
-                <h3 id="currentTrackTitle">Track Title</h3>
-                <p id="currentArtist">Artist</p>
-            </div>
+    <footer>
+        <div class="footer-info">
+            <p>&copy; 2024 Tunewave Music</p>
         </div>
-        <div class="player-controls">
-            <button class="prev">&#9664;</button>
-            <button class="play-pause" onclick="togglePlay()">Play</button>
-            <button class="next">&#9654;</button>
-        </div>
-        <audio id="audioPlayer" controls></audio>
-    </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
+</html>
