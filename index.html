@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoundScape - Music Listing</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- 3D Animated Music Listing Section -->
+    <div class="music-container">
+        <div class="music-list">
+            <div class="music-tile" id="track1" onclick="playTrack('track1.mp3')">
+                <img src="album1.jpg" alt="Album Cover" class="album-cover">
+                <div class="track-info">
+                    <h3>Track Title 1</h3>
+                    <p>Artist Name</p>
+                </div>
+                <div class="play-button"></div>
+            </div>
+            <div class="music-tile" id="track2" onclick="playTrack('track2.mp3')">
+                <img src="album2.jpg" alt="Album Cover" class="album-cover">
+                <div class="track-info">
+                    <h3>Track Title 2</h3>
+                    <p>Artist Name</p>
+                </div>
+                <div class="play-button"></div>
+            </div>
+            <!-- Add more music tiles as needed -->
+        </div>
+    </div>
+
+    <!-- Music Player -->
+    <div class="music-player" id="player">
+        <div class="player-controls">
+            <button class="prev">Prev</button>
+            <button class="play-pause" onclick="togglePlay()">Play</button>
+            <button class="next">Next</button>
+        </div>
+        <audio id="audioPlayer" controls>
+            <source id="audioSource" src="" type="audio/mp3">
+        </audio>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
