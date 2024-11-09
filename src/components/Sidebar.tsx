@@ -5,7 +5,7 @@ const Sidebar = () => {
   return (
     <div className="w-64 bg-black h-full flex flex-col">
       <div className="p-6">
-        <h1 className="text-white text-2xl font-bold mb-8">Spotify</h1>
+        <h1 className="text-white text-2xl font-bold mb-8">TuneWave</h1>
         
         <nav className="space-y-4">
           <a href="#" className="flex items-center text-gray-300 hover:text-white">
