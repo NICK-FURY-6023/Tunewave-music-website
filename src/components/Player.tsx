@@ -11,8 +11,8 @@ const Player = () => {
           className="h-14 w-14 rounded"
         />
         <div className="ml-4">
-          <h4 className="text-white text-sm">Summer Nights</h4>
-          <p className="text-gray-400 text-xs">Artist Name</p>
+          <h4 className="text-white text-sm">Die With Smile</h4>
+          <p className="text-gray-400 text-xs">NICK FURY 💀</p>
         </div>
       </div>
 

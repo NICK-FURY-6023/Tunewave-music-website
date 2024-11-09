@@ -29,7 +29,7 @@ const MainContent = () => {
     <div className="flex-1 bg-gradient-to-b from-[#1e1e1e] to-[#121212] overflow-auto">
       <div className="p-8">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-2xl text-white font-bold">Good afternoon</h2>
+          <h2 className="text-2xl text-white font-bold">Good Morning</h2>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
